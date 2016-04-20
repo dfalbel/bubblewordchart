@@ -1,0 +1,28 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+```{r}
+library(dplyr)
+library(bubblewordchart)
+df <- data_frame(
+  qt1 = 1:10 + rbinom(10,10,0.5),
+  qt2 = 10:1 + rbinom(10,10,0.5),
+  palavra = letters[1:10]
+)
+
+bubblewordchart(df, "palavra", "qt1", "qt2")
+```
+
